@@ -1,0 +1,14 @@
+body > *:not(nav) {
+  padding: 20px;
+}
+
+body > ul.collection {
+  margin: 0 20px;
+  padding: 10px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,1 +1,31 @@
 <h1>Todos</h1>
+
+{{#if todos.length}}
+<ul class="collection">
+  {{#each todos}}
+    <li class="todo">
+
+          {{#if completed}}
+          <label class="completed">
+            <input type="checkbox" checked />
+            <span>{{ title }}</span>
+          </label>
+         
+          {{else}}
+          <label>
+            <input type="checkbox" />
+            <span>{{ title }}</span>
+          </label>
+          {{/if}}
+
+        <span>
+          <i class="small material-icons">create</i>
+          <i class="small material-icons">delete</i>
+        </span>
+      
+    </li>
+  {{/each}}
+</ul>
+{{else}}
+<p>No todos in the list!</p>
+{{/if}}
