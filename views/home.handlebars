@@ -3,26 +3,32 @@
 {{#if todos.length}}
 <ul class="collection">
   {{#each todos}}
-    <li class="todo">
-
-          {{#if completed}}
-          <label class="completed">
-            <input type="checkbox" checked />
+    <li>
+        <form action="/update" method="POST" class="todo">
+            {{#if completed}}
+            <label class="completed">
+            <input type="checkbox" checked name="completed" value="false" id="{{_id}}" />
             <span>{{ title }}</span>
-          </label>
-         
-          {{else}}
-          <label>
-            <input type="checkbox" />
-            <span>{{ title }}</span>
-          </label>
-          {{/if}}
+            </label>
 
-        <span>
-          <i class="small material-icons">create</i>
-          <i class="small material-icons">delete</i>
-        </span>
-      
+            {{else}}
+            <label>
+            <input type="checkbox" name="completed" value="true" id="{{_id}}"/>
+            <span>{{ title }}</span>
+            </label>
+            {{/if}}
+
+            <input type="hidden" value="{{_id}}" name="id" />
+            <span>
+              <button type="button" onclick="updateTodo()">
+                <i class="small material-icons">create</i>
+              </button>
+              <i class="small material-icons">delete</i>
+              <button type="submit">
+                  <i class="small material-icons turquoise">save</i>
+              </button>
+            </span>
+        </form>
     </li>
   {{/each}}
 </ul>

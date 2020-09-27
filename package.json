@@ -17,6 +17,7 @@
     "mongoose": "^5.10.6"
   },
   "devDependencies": {
+    "hbs": "^4.1.1",
     "nodemon": "^2.0.4"
   }
 }

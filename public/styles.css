@@ -12,3 +12,17 @@ body > ul.collection {
   align-items: center;
   justify-content: space-between;
 }
+
+.turquoise {
+  color: #26a69a;
+}
+
+.todo button {
+  background: none;
+  border: none;
+}
+
+.material-icons:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

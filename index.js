@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = require('./routes');
 const exhbs = require('express-handlebars');
+const hbs = require('hbs');
 const path = require('path');
 
 require('dotenv').config();
@@ -9,7 +10,7 @@ require('dotenv').config();
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 
 app.engine('handlebars', exhbs());
 app.set('view engine', 'handlebars');
