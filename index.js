@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = require('./routes');
 const exhbs = require('express-handlebars');
-const hbs = require('hbs');
 const path = require('path');
 
 require('dotenv').config();

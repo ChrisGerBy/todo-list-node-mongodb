@@ -8,9 +8,6 @@ router.get('/', async (req, res) => {
   res.render('home', {
     title: 'Todo List',
     todos,
-    helpers: {
-      someFunc: (e) => console.log(e)
-    },
   });
 });
 
@@ -27,7 +24,7 @@ router.post('/create', async (req, res) => {
 
   await todo.save();
 
-  res.redirect('/');
+  res.redirect('/create');
 });
 
 router.post('/update', async (req, res) => {
@@ -39,5 +36,16 @@ router.post('/update', async (req, res) => {
 
   res.redirect('/');
 });
+
+router.delete('/delete/:id', async ( req, res ) => {
+  const todoId = req.params.id;
+  const todo = await Todo.findOneAndDelete({ '_id': todoId });
+
+  if(todo) {
+    res.sendStatus(200).json({ success: true });
+  } else {
+    res.sendStatus(500).json({ message: `No todo with id ${todoId} found!` });
+  }
+})
 
 module.exports = router;

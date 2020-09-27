@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body > *:not(nav) {
   padding: 20px;
 }
@@ -25,4 +29,26 @@ body > ul.collection {
 .material-icons:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+#message {
+  position: absolute;
+  width: 98%;
+  left: 1%;
+  margin: 10px auto;
+  padding: 10px;
+  font-style: italic;
+  display: none;
+  color:  #F5B7B1;
+}
+
+#message.failure {
+  background: #FDEDEC;
+  border: 1px solid #F5B7B1;
+}
+
+#message.success {
+  background: #D5F5E3;
+  border: 1px solid #82E0AA;
+  color: #82E0AA;
 }
