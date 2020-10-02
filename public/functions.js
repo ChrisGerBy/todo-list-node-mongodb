@@ -1,4 +1,5 @@
 const deleteButtons = document.querySelectorAll('.delete');
+const updateButtons = document.querySelectorAll('.update');
 const messageBlock = document.getElementById('message');
 
 const messageBlockType = {
@@ -36,4 +37,17 @@ deleteButtons.forEach(button => button.addEventListener('click', (e) => {
 
       showMessageBlock(messageBlockType.FAILURE, 'Something went wrong!');
     })
+}));
+
+updateButtons.forEach(button => button.addEventListener(('click'), (e) => {
+  const form = e.target.closest('form');
+  const label = form.querySelector('label');
+  const span = label.querySelector('span');
+  const text = span.innerHTML;
+
+  const input = document.createElement("input");
+  input.setAttribute('type', 'text');
+  input.setAttribute('value', text);
+  input.setAttribute('name', 'title');
+  label.replaceChild(input, span);
 }));

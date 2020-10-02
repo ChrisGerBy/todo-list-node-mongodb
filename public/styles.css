@@ -6,9 +6,27 @@ body > *:not(nav) {
   padding: 20px;
 }
 
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 body > ul.collection {
-  margin: 0 20px;
+  margin: 0 auto;
   padding: 10px;
+  max-width: 600px;
+  border: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+body > ul.collection li {
+  padding: 15px 0;
+  border-bottom: 1px solid #DFE2E0;
+
 }
 
 .todo {
@@ -51,4 +69,19 @@ body > ul.collection {
   background: #D5F5E3;
   border: 1px solid #82E0AA;
   color: #82E0AA;
+}
+
+input {
+  width: auto !important;
+}
+
+.create-todo-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.create-todo-form  input {
+  flex-grow: 1;
 }

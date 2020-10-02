@@ -30,6 +30,9 @@ router.post('/create', async (req, res) => {
 router.post('/update', async (req, res) => {
   const todo = await Todo.findById({ '_id': req.body.id });
 
+  const updatedTitle = req.body.title;
+  if(updatedTitle) todo.title = updatedTitle;
+
   todo.completed = !!req.body.completed;
 
   await todo.save();
