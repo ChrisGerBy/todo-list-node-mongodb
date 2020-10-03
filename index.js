@@ -19,7 +19,7 @@ app.use(router);
 
 async function start() {
   try {
-    await mongoose.connect(process.env.MONGODB, {
+    await mongoose.connect(process.env.MONGODB || 'mongodb://localhost/todo-list-node-mongodb', {
       useNewUrlParser: true,
       useUnifiedTopology: true
     }, () => {
