@@ -12,6 +12,10 @@ nav {
   z-index: 1;
 }
 
+nav .hide-on-med-and-down {
+  display: block !important;
+}
+
 body > ul.collection {
   margin: 0 auto;
   padding: 10px;
